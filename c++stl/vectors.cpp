@@ -5,6 +5,8 @@ using namespace std;
 
 void explainVectors()
 {
+
+
     vector<int>v;
     v.push_back(1);
     v.emplace_back(2);
@@ -30,6 +32,11 @@ void explainVectors()
     Performance: More efficient in some cases because it avoids extra copying/moving. It directly constructs the object in place using the provided arguments.
     */
 
+
+
+
+
+
    //vactor of a pair datatype
    vector<pair<int,int>>ve;
    ve.push_back({1,2});
@@ -42,6 +49,10 @@ void explainVectors()
    vector<int> vect2(vect1);
 
    // we can modify the size of vctor even after defining the size
+
+
+
+
 
    //to access the elements of the vector
    //4 ways
@@ -87,13 +98,48 @@ void explainVectors()
     cout<<*(it)<<" ";
    }
 
-   //3 --- using for each loop
+   //4 --- using for each loop
    for(auto it : v)
    {
      cout<<it<<" ";
    }
 
+
+
+
+
    //erase or delete elements
+
+   //erase single element
+   v.erase(v.begin()+1);
+
+   //erase multiple element
+   //eg . erase(start,end)
+   v.erase(v.begin()+2 , v.begin()+4);
+   //input = 10,20,30,40,50,60   and output = 10,20,50,60
+   // we have to give the address where we want to sTART and the arrdress after the deletion range
+
+
+
+
+//inserting function
+vector<int> v(2,100);
+v.insert(v.begin() , 300);
+v.insert(v.begin()+1, 2 , 10 );//300,10,10,100,100
+
+vector<int>copy(2,50);
+v.insert(v.begin(),copy.begin(),copy.end());
+
+
+
+
+
+//others functions
+cout<<v.size();//gives size
+v.pop_back();//removes last element
+vect2.swap(vect1);//swap vector elements
+v.clear();//makes vector empty
+cout<<v.empty();//return boolean value
 
 
 }
